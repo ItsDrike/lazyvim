@@ -290,6 +290,9 @@ return {
   -- Undo tree in telescope
   {
     "telescope.nvim",
+    keys = {
+      { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Highlight groups" },
+    },
     dependencies = {
       {
         "debugloop/telescope-undo.nvim",

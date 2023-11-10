@@ -1,9 +1,10 @@
 return {
-  -- Tree-like view of LSP symbols within a file
-  { import = "lazyvim.plugins.extras.editor.symbols-outline" },
+  -- Coding
+  { import = "lazyvim.plugins.extras.coding.yanky" }, -- Clipboard manager
 
-  -- Show LSP symbol navigation in lualine
-  -- { import = "lazyvim.plugins.extras.editor.navic" },
+  -- Editor
+  { import = "lazyvim.plugins.extras.editor.symbols-outline" }, -- Tree-like view of LSP symbols within a file
+  -- { import = "lazyvim.plugins.extras.editor.navic" }, Show LSP symbol navigation in lualine
 
   -- Formatters
   { import = "lazyvim.plugins.extras.formatting.black" }, -- black formatter

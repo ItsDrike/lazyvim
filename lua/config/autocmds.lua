@@ -26,6 +26,16 @@ autocmd({ "BufReadPost", "BufNewFile", "BufWritePost" }, {
   end,
 })
 
+-- Enable spellcheck and line wrapping in text files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "gitcommit", "markdown", "text" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+  end,
+  desc = "Enable spellcheck and line wrap in text files",
+})
+
 -- autocmd({ "FileType" }, {
 --   pattern = { "lua" },
 --   callback = function()
