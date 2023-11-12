@@ -15,6 +15,9 @@ map("n", "|", "<C-W>v", { desc = "Split window right", remap = true })
 map("n", "\\", "<C-W>s", { desc = "Split window below", remap = true })
 map("n", "<leader>w\\", "<C-W>s", { desc = "Split window below", remap = true })
 
+-- Use gl for Line Diagnostics, not just <leader>cd
+map("n", "gl", "<leader>cd", { desc = "Line Diagnostics", remap = true })
+
 -- Delete to void register & paste without overriding copied text
 map("n", "<A-d>", '"_d')
 map("v", "<A-d>", '"_d')
