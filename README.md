@@ -42,6 +42,8 @@ My presonal LazyVim configuration.
 
 - [ ] Consider adding neotest extra (might need adapter configs)
 - [ ] Consider moving to regular markdownlint, since markdownlint-cli2 is hard to configure (needs file)
+- [ ] When a buffer with errors is shown in the tabline, the highlight makes it unredable (red blocks)
+- [ ] Resizing splits with ctrl+arrows is sometimes inverted (depending on the split)
 - [ ] Slow exit
 
 ## Template
