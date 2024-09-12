@@ -31,6 +31,14 @@ map("n", "\\", "<leader>-", { remap = true, desc = "Split Window Below" })
 -- I'm used to opening diagnostic float with gl, instead of <C-w>d or <leader>cd
 map("n", "gl", "<leader>cd", { remap = true, desc = "Line diagnostics" })
 
+-- Move lines up and down
+map("n", "<C-S-j>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
+map("n", "<C-S-k>", "<Esc>:m .-2<CR>==", { desc = "Move line up", silent = true })
+map("i", "<C-S-j>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down", silent = true })
+map("i", "<C-S-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up", silent = true })
+map("v", "<C-S-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up", silent = true })
+map("v", "<C-S-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down", silent = true })
+
 ----------------------------------------------------------------------------------------------
 ---Keymaps
 ----------------------------------------------------------------------------------------------
