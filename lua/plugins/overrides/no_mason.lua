@@ -13,6 +13,7 @@
 --  * nil
 --  * neocmakelsp
 --  * bash-language-server
+--  * emmet-ls
 -- Linters & Formatters:
 --  * stylua
 --  * shfmt
@@ -46,6 +47,7 @@ return {
         nil_ls = { mason = false },
         neocmake = { mason = false },
         bashls = { mason = false },
+        emmet_ls = { mason = false },
       },
     },
   },
