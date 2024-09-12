@@ -2,6 +2,6 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    opts = { servers = { emmet_ls = {} } },
+    opts = { servers = { emmet_language_server = {} } },
   },
 }
