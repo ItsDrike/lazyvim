@@ -39,6 +39,10 @@ map("i", "<C-S-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up", silent = tru
 map("v", "<C-S-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up", silent = true })
 map("v", "<C-S-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down", silent = true })
 
+map("n", "<leader>fs", function()
+  require("telescope.builtin").lsp_workspace_symbols()
+end, { desc = "Workspace LSP symbols" })
+
 ----------------------------------------------------------------------------------------------
 ---Keymaps
 ----------------------------------------------------------------------------------------------
