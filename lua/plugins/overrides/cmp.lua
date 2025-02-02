@@ -1,7 +1,59 @@
 ---@type LazySpec
 return {
   {
+    "saghen/blink.cmp",
+    optional = true,
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      completion = {
+        list = {
+          selection = { preselect = false, auto_insert = false },
+        },
+      },
+      --signature = { enabled = true },
+      keymap = {
+        -- Disable any pre-sets, I like to configure this from scratch
+        --
+        -- This is because I don't like the default behavior, where <CR> is used to confirm the
+        -- completions whenever available. This is because I often just want a newline, but a
+        -- completion is started, and I accidentally select something, which is very annoying.
+        -- I only want to use <CR> for confirming if something was explicitly selected.
+        --
+        -- I also don't like that <Tab> is used to handle snippet jumping, since that means I
+        -- can't use tab to actually tab while in a completion. I prefer using a completely
+        -- different keymap for snippet jumping and only snippet jumping.
+        --
+        -- On top of this, I like to select the completions with <C-j> & <C-k>, not <Tab>.
+        --
+        -- This means that none of the available presets are a great fit for me.
+        preset = "none",
+
+        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-e>"] = { "hide", "fallback" },
+
+        ["<C-j>"] = { "show", "select_next", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<C-k>"] = { "select_prev", "fallback" },
+        ["<Up>"] = { "select_prev", "fallback" },
+
+        ["<Tab>"] = { "select_and_accept", "fallback" }, -- currently selected or first item
+        ["<CR>"] = { "accept", "fallback" }, -- only if explicitly selected
+        ["<S-Tab"] = { "hide", "fallback" },
+
+        ["<C-n>"] = { "snippet_forward", "fallback" },
+        ["<C-p>"] = { "snippet_backward", "fallback" },
+
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+        --["<C-i>"] = { "show_signature", "hide_signature", "fallback" },
+      },
+    },
+  },
+
+  {
     "hrsh7th/nvim-cmp",
+    optional = true,
     opts = function(_, opts)
       local cmp = require("cmp")
 
@@ -100,6 +152,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
+    optional = true,
     dependencies = { "hrsh7th/cmp-emoji" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)

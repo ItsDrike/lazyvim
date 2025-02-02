@@ -67,7 +67,7 @@ return {
           return true
         end,
         color = function()
-          return LazyVim.ui.fg("Statement")
+          return { fg = Snacks.util.color("Statement") }
         end,
       })
       return opts
