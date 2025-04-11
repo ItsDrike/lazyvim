@@ -37,8 +37,8 @@ return {
         ["<C-k>"] = { "select_prev", "fallback" },
         ["<Up>"] = { "select_prev", "fallback" },
 
-        ["<Tab>"] = { "select_and_accept", "fallback" }, -- currently selected or first item
-        ["<CR>"] = { "accept", "fallback" }, -- only if explicitly selected
+        ["<Tab>"] = { "accept", "fallback" }, -- accept only if explicitly selected
+        ["<CR>"] = { "accept", "fallback" }, -- accept only if explicitly selected
         ["<S-Tab"] = { "hide", "fallback" },
 
         ["<C-n>"] = { "snippet_forward", "fallback" },
