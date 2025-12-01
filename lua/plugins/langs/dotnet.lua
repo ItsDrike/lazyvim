@@ -3,7 +3,7 @@ return {
   -- Note that this also requires a custom mason repository to be specified
   -- this is done from the mason.lua override plugin spec
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "roslyn",
